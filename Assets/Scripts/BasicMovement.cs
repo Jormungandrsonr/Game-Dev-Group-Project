@@ -3,9 +3,9 @@ using UnityEngine;
 public class BasicMovement : MonoBehaviour
 {
     public Vector2 lastMovementDirection = Vector2.zero;
-    public Vector2 boxSize = new Vector2(0.08f,0.001f);
-    public float groundCheckDistance = 0.01f;
-    public float groundCheckOffset = 0.12f;
+    //public Vector2 boxSize = new Vector2(0.08f,0.001f);
+    //public float groundCheckDistance = 0.01f;
+    //public float groundCheckOffset = 0.12f;
 
     public void SetLastMove(Vector2 movement)
     {
@@ -18,6 +18,7 @@ public class BasicMovement : MonoBehaviour
             lastMovementDirection = Vector2.zero;
         }
     }
+    /*
     public bool IsGrounded()
     {
         Collider2D col = GetComponent<Collider2D>();
@@ -39,4 +40,5 @@ public class BasicMovement : MonoBehaviour
         
         return grounded;
     }
+    */
 }
