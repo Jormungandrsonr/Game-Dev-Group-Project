@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - transistion
+  - breakable
   layers:
   - Default
   - TransparentFX
