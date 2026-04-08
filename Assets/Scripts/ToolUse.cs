@@ -37,11 +37,13 @@ public class toolUse : MonoBehaviour
         float lastPositionOffsetX = move.lastMovementDirection.x * move.breakableCheckOffsetX;
         float lastPositionOffsetY = move.lastMovementDirection.y * move.breakableCheckOffsetY;
         //Debug.Log(move.lastMovementDirection.x + " " + move.lastMovementDirection.y);
-        Vector2 rayStart = new Vector2((transform.position.x + lastPositionOffsetX), (transform.position.y + lastPositionOffsetY));    
-        
+        Vector2 rayStart = new Vector2((transform.position.x + lastPositionOffsetX), (transform.position.y + lastPositionOffsetY));  
+
+        //needs deubgging/box keeps hitting the player collider. wish unity had Debug.DrawBox but it don't
         RaycastHit2D hit = Physics2D.BoxCast(rayStart, move.boxSize, 0, move.lastMovementDirection, move.breakableCheckDistance);
 
         bool grounded = hit.collider != null;
+        
         
         Debug.DrawRay(rayStart, move.lastMovementDirection*move.breakableCheckDistance, grounded ? Color.blue: Color.red);
         
