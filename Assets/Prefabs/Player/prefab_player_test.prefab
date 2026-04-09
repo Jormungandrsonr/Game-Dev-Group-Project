@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 557094349037828602}
   - component: {fileID: 8661802493711897981}
   - component: {fileID: 1062159868714003905}
+  - component: {fileID: 129498936506130078}
   m_Layer: 0
   m_Name: prefab_player_test
   m_TagString: Player
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 254256131
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 8516230495160722870, guid: a7adf1c7a144a594daf7514d56b77065, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -102,7 +103,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb2d57fc1abc2236a368bf45b6a7134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastMovementDirection: {x: 0, y: 0}
+  lastMovementDirection: {x: 0, y: -1}
+  currentMovementDirection: {x: 0, y: 0}
+  boxSize: {x: 0.08, y: 0.001}
+  breakableCheckDistance: 0.35
+  breakableCheckOffsetX: 0.2
+  breakableCheckOffsetY: 0.3
   speed: 2
 --- !u!50 &8661802493711897981
 Rigidbody2D:
@@ -177,3 +183,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.35, y: 0.57}
   m_EdgeRadius: 0
+--- !u!114 &129498936506130078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8713322973280378774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bf94540d90fbeb2b2ec374e48e3211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
