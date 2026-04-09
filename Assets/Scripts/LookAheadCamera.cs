@@ -26,8 +26,8 @@ public class LookAheadCamera : MonoBehaviour
         {
             return;
         }
-        Vector3 targetLookAhead = new Vector3(move.lastMovementDirection.x, 
-                                        move.lastMovementDirection.y, 0) * lookAheadDistance;
+        Vector3 targetLookAhead = new Vector3(move.currentMovementDirection.x, 
+                                        move.currentMovementDirection.y, 0) * lookAheadDistance;
 
         currentLookAhead = Vector3.Lerp(
             currentLookAhead, targetLookAhead, lookAheadSpeed * Time.fixedDeltaTime
