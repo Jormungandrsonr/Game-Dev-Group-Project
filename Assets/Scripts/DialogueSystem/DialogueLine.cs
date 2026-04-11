@@ -8,4 +8,6 @@ public class DialogueLine
     public string dialogueText;
     public Sprite speakerImage;
 
+    // Leave empty for normal continue behavior
+    public DialogueChoice[] choices;
 }

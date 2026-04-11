@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a685c6ca74d642c45a620af1625158f8, type: 3}
+  m_Name: RedPill
+  m_EditorClassIdentifier: 
+  lines:
+  - speakerName: Turt
+    dialogueText: You chose the red pill!
+    speakerImage: {fileID: -4930946532607477187, guid: afb1e00c5e7a23a41afc54e10d9ab8bd, type: 3}
+    choices: []
+  - speakerName: Player
+    dialogueText: Bye Bye
+    speakerImage: {fileID: 1488681671123293868, guid: 87e24daf45b163a45a1abfdd0ab6fa76, type: 3}
+    choices: []

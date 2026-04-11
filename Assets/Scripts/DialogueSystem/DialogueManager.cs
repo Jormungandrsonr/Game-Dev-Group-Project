@@ -14,6 +14,10 @@ public class DialogueManager : MonoBehaviour
     public Image speakerImage;
     public GameObject dialogueGameObject;
 
+    // NEW: assign a panel in the Inspector; buttons are spawned here at runtime
+    public GameObject choicePanel;
+    public GameObject choiceButtonPrefab; // Button with a TextMeshProUGUI child
+
     [Header("Text Configuration")]
     public float typingSpeed = 0.05f;
 
@@ -28,6 +32,7 @@ public class DialogueManager : MonoBehaviour
     private int currentIndex = 0;
     private Coroutine typingCoroutine;
     private bool justStarted = false;
+    private bool waitingForChoice = false; // NEW
     #endregion
 
     private void Awake()
@@ -56,6 +61,9 @@ public class DialogueManager : MonoBehaviour
                 return;
             }
 
+            // NEW: block E from advancing dialogue while a choice is displayed
+            if (waitingForChoice) return;
+
             if (isTyping)
             {
                 StopCoroutine(typingCoroutine);
@@ -66,14 +74,12 @@ public class DialogueManager : MonoBehaviour
             {
                 currentIndex++;
 
-                // If there are more lines, show the next one
                 if (currentIndex < dialogueLines.Length)
                 {
                     typingCoroutine = StartCoroutine(TypeLine(dialogueLines[currentIndex]));
                 }
                 else
                 {
-                    // End of dialogue
                     dialogueFinished = true;
                     dialogueGameObject.SetActive(false);
                 }
@@ -81,12 +87,10 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-
-
     IEnumerator TypeLine(DialogueLine line)
     {
         isTyping = true;
-        
+
         textBox.text = "";
         nameBox.text = line.speakerName;
         speakerImage.sprite = line.speakerImage;
@@ -98,6 +102,10 @@ public class DialogueManager : MonoBehaviour
         }
 
         isTyping = false;
+
+        // NEW: show choices if this line has any
+        if (line.choices != null && line.choices.Length > 0)
+            ShowChoices(line.choices);
     }
 
     private void ShowFullLine(DialogueLine line)
@@ -107,4 +115,60 @@ public class DialogueManager : MonoBehaviour
         speakerImage.sprite = line.speakerImage;
     }
 
+    private void ShowChoices(DialogueChoice[] choices)
+    {
+        Debug.Log("ShowChoices called with " + choices.Length + " choices");
+        waitingForChoice = true;
+        choicePanel.SetActive(true);
+
+        foreach (DialogueChoice choice in choices)
+        {
+            GameObject btn = Instantiate(choiceButtonPrefab, choicePanel.transform);
+            Debug.Log("Spawned button for: " + choice.choiceText);
+
+            Button b = btn.GetComponentInChildren<Button>();
+            Debug.Log("Button component found: " + (b != null));
+
+            TextMeshProUGUI tmp = btn.GetComponentInChildren<TextMeshProUGUI>();
+            Debug.Log("TMP component found: " + (tmp != null));
+            if (tmp != null) tmp.text = choice.choiceText;
+
+            DialogueChoice captured = choice;
+            if (b != null)
+            {
+                b.onClick.AddListener(() =>
+                {
+                    Debug.Log("Button clicked: " + captured.choiceText);
+                    OnChoiceSelected(captured);
+                });
+            }
+        }
+    }
+
+    private void OnChoiceSelected(DialogueChoice choice)
+    {
+        Debug.Log("OnChoiceSelected called for: " + choice.choiceText);
+        Debug.Log("Branch tree is null: " + (choice.branchTree == null));
+
+        foreach (Transform child in choicePanel.transform)
+            Destroy(child.gameObject);
+        choicePanel.SetActive(false);
+        waitingForChoice = false;
+
+        choice.onChoiceSelected?.Invoke();
+
+        if (choice.branchTree != null && choice.branchTree.lines.Length > 0)
+        {
+            Debug.Log("Branching into tree with " + choice.branchTree.lines.Length + " lines");
+            dialogueLines = choice.branchTree.lines;
+            currentIndex = 0;
+            typingCoroutine = StartCoroutine(TypeLine(dialogueLines[currentIndex]));
+        }
+        else
+        {
+            Debug.Log("No branch tree, ending dialogue");
+            dialogueFinished = true;
+            dialogueGameObject.SetActive(false);
+        }
+    }
 }
