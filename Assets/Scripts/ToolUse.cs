@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class toolUse : MonoBehaviour
+public class ToolUse : MonoBehaviour
 {
     Rigidbody2D rb2d;
     BasicMovement move;
     Collider2D collide;
+    bool inReach = false;
 
 
     
@@ -20,6 +21,7 @@ public class toolUse : MonoBehaviour
         if(breakableInReach)
         {
             Debug.Log("In reach.");
+            inReach = true;
         } 
         else
         {
@@ -30,17 +32,28 @@ public class toolUse : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if(inReach)
+        {
+            Debug.Log("");
+            inReach = false;
+        }
         //same thing with jump, but make it tool use with tag "breakable"
     }
     public bool IsFacingBreakable()
     {
-        float lastPositionOffsetX = move.lastMovementDirection.x * move.breakableCheckOffsetX;
-        float lastPositionOffsetY = move.lastMovementDirection.y * move.breakableCheckOffsetY;
+        float tempMoveX = move.lastMovementDirection.x;
+        float tempMoveY = move.lastMovementDirection.y;
+
+
+        float lastPositionOffsetX = tempMoveX * move.breakableCheckOffsetX;
+        float lastPositionOffsetY = tempMoveY * move.breakableCheckOffsetY;
+
+        
         //Debug.Log(move.lastMovementDirection.x + " " + move.lastMovementDirection.y);
         Vector2 rayStart = new Vector2((transform.position.x + lastPositionOffsetX), (transform.position.y + lastPositionOffsetY));  
 
-        //needs deubgging/box keeps hitting the player collider. wish unity had Debug.DrawBox but it don't
-        RaycastHit2D hit = Physics2D.BoxCast(rayStart, move.boxSize, 0, move.lastMovementDirection, move.breakableCheckDistance);
+        LayerMask breakableMask = LayerMask.GetMask("Breakable");
+        RaycastHit2D hit = Physics2D.BoxCast(rayStart, move.boxSize, 0, move.lastMovementDirection, move.breakableCheckDistance, breakableMask);
 
         bool grounded = hit.collider != null;
         

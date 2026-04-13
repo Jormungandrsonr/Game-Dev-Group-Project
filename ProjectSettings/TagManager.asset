@@ -10,7 +10,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Breakable
   - Water
   - UI
   - 
@@ -49,11 +49,11 @@ TagManager:
   - name: Transisition
     uniqueID: 3101376361
     locked: 0
-  - name: Player
-    uniqueID: 254256131
-    locked: 0
   - name: Obstacle
     uniqueID: 2345196001
+    locked: 0
+  - name: Player
+    uniqueID: 254256131
     locked: 0
   m_RenderingLayers:
   - Default

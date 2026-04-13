@@ -577,7 +577,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1949771295
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 3a82a848169c5e620ac3a98af80a86ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -700,6 +700,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 557094349037828602, guid: 9e12676af000bcf308554db779d6c677, type: 3}
+      propertyPath: boxSize.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 557094349037828602, guid: 9e12676af000bcf308554db779d6c677, type: 3}
+      propertyPath: breakableCheckOffsetX
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 557094349037828602, guid: 9e12676af000bcf308554db779d6c677, type: 3}
+      propertyPath: breakableCheckOffsetY
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1062159868714003905, guid: 9e12676af000bcf308554db779d6c677, type: 3}
+      propertyPath: m_Size.y
+      value: 0.2907567
+      objectReference: {fileID: 0}
+    - target: {fileID: 1062159868714003905, guid: 9e12676af000bcf308554db779d6c677, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.13962168
+      objectReference: {fileID: 0}
     - target: {fileID: 5501759037249676431, guid: 9e12676af000bcf308554db779d6c677, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.048
@@ -743,6 +763,10 @@ PrefabInstance:
     - target: {fileID: 8713322973280378774, guid: 9e12676af000bcf308554db779d6c677, type: 3}
       propertyPath: m_Name
       value: prefab_player_test
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713322973280378774, guid: 9e12676af000bcf308554db779d6c677, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1006,7 +1030,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1949771295
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 3a82a848169c5e620ac3a98af80a86ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1253,7 +1277,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1949771295
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 3a82a848169c5e620ac3a98af80a86ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1482,7 +1506,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1949771295
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 3a82a848169c5e620ac3a98af80a86ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1521,7 +1545,7 @@ GameObject:
   - component: {fileID: 1991808821}
   - component: {fileID: 1991808820}
   - component: {fileID: 1991808819}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: IconRock_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1562,7 +1586,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.005564153}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1572,7 +1596,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.53, y: 0.48}
+  m_Size: {x: 0.53, y: 0.49112833}
   m_EdgeRadius: 0
 --- !u!212 &1991808820
 SpriteRenderer:
@@ -1616,7 +1640,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1949771295
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 6732675876417755004, guid: 1935a3d924a45844791684caa8c51ce6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

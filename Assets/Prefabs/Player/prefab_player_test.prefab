@@ -107,7 +107,7 @@ MonoBehaviour:
   currentMovementDirection: {x: 0, y: 0}
   boxSize: {x: 0.08, y: 0.001}
   breakableCheckDistance: 0.35
-  breakableCheckOffsetX: 0.2
+  breakableCheckOffsetX: 2.58
   breakableCheckOffsetY: 0.3
   speed: 2
 --- !u!50 &8661802493711897981
