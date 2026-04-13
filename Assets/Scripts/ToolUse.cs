@@ -5,40 +5,49 @@ public class ToolUse : MonoBehaviour
     Rigidbody2D rb2d;
     BasicMovement move;
     Collider2D collide;
-    bool inReach = false;
+    Transform breakableTransform;
+    bool breakRequest = false;
 
 
     
     void Awake()
     {
-        rb2d = GetComponent<Rigidbody2D>();
         move = GetComponent<BasicMovement>();
-        collide = GetComponent<Collider2D>();
+
     }
     void Update()
     {
         bool breakableInReach = IsFacingBreakable();
-        if(breakableInReach)
+        if(breakableInReach && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("In reach.");
-            inReach = true;
+            //Debug.Log("In reach.");
+            breakRequest = true;
+            if(breakableTransform == null)
+            {
+                breakRequest = false;
+            }
         } 
         else
         {
             //Debug.Log("Out of Reach");
         }
-        //raycast with box, check if tag, else have a question mark appear
+        
         //simple tags on breakable objects/ocean spots
     }
     void FixedUpdate()
     {
-        if(inReach)
+        if(breakRequest)
         {
-            Debug.Log("");
-            inReach = false;
+            Debug.Log("Breakable");
+            //get the player to the position, have them do a lil dance, yk
+            Destroy(breakableTransform.gameObject);
+            breakRequest = false;
         }
         //same thing with jump, but make it tool use with tag "breakable"
     }
+
+    ///////////Non-Unity-Based Methods/////////////
+
     public bool IsFacingBreakable()
     {
         float tempMoveX = move.lastMovementDirection.x;
@@ -58,17 +67,20 @@ public class ToolUse : MonoBehaviour
         bool grounded = hit.collider != null;
         
         
+        
         Debug.DrawRay(rayStart, move.lastMovementDirection*move.breakableCheckDistance, grounded ? Color.blue: Color.red);
         
         if(grounded)
         {
             //Debug.Log(hit.collider.tag);
-            grounded = hit.collider.tag != "Player";
-            if(grounded) {Debug.DrawRay(rayStart, move.lastMovementDirection*move.breakableCheckDistance,Color.red);}
+            //grounded = hit.collider.tag != "Player";
+            //if(grounded) {Debug.DrawRay(rayStart, move.lastMovementDirection*move.breakableCheckDistance,Color.red);}
+            breakableTransform = hit.transform;
         }
         else
         {
             Debug.DrawRay(rayStart, move.lastMovementDirection*move.breakableCheckDistance, Color.green);
+            breakableTransform = null;
         }
         
         return grounded;
