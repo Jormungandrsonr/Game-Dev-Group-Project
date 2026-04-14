@@ -434,7 +434,7 @@ MonoBehaviour:
   target: {fileID: 793878734}
   smoothSpeed: 4.77
   offset: {x: 0, y: 0, z: -10}
-  lookAheadDistance: 1.2
+  lookAheadDistance: 0.91
   lookAheadSpeed: 4.7
 --- !u!1 &181612581
 GameObject:
