@@ -479,6 +479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 3836752132282134608, guid: 35af3acac7030130cbd42801ea8d3bfa, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 4226753243193286095, guid: 35af3acac7030130cbd42801ea8d3bfa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.561647
@@ -540,7 +544,7 @@ GameObject:
   - component: {fileID: 259220716}
   m_Layer: 0
   m_Name: rocks
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -577,9 +581,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_prefab (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3836752132282134608, guid: 35af3acac7030130cbd42801ea8d3bfa, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 4226753243193286095, guid: 35af3acac7030130cbd42801ea8d3bfa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2138054
+      value: -0.86
       objectReference: {fileID: 0}
     - target: {fileID: 4226753243193286095, guid: 35af3acac7030130cbd42801ea8d3bfa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1339,6 +1347,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_prefab (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3836752132282134608, guid: 35af3acac7030130cbd42801ea8d3bfa, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 4226753243193286095, guid: 35af3acac7030130cbd42801ea8d3bfa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.0358076
@@ -1773,6 +1785,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_prefab (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3836752132282134608, guid: 35af3acac7030130cbd42801ea8d3bfa, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 4226753243193286095, guid: 35af3acac7030130cbd42801ea8d3bfa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.3661946
@@ -1834,6 +1850,10 @@ PrefabInstance:
     - target: {fileID: 3125732057128382518, guid: 65f3f37eeccc3f8618d1fcaf04929b3c, type: 3}
       propertyPath: m_Name
       value: IconWood_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125732057128382518, guid: 65f3f37eeccc3f8618d1fcaf04929b3c, type: 3}
+      propertyPath: m_TagString
+      value: Wood
       objectReference: {fileID: 0}
     - target: {fileID: 6687040080186859341, guid: 65f3f37eeccc3f8618d1fcaf04929b3c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1960,6 +1980,10 @@ PrefabInstance:
     - target: {fileID: 3836752132282134608, guid: 35af3acac7030130cbd42801ea8d3bfa, type: 3}
       propertyPath: m_Name
       value: IconRock_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836752132282134608, guid: 35af3acac7030130cbd42801ea8d3bfa, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 4226753243193286095, guid: 35af3acac7030130cbd42801ea8d3bfa, type: 3}
       propertyPath: m_LocalPosition.x

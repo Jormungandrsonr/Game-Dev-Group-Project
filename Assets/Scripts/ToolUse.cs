@@ -152,9 +152,18 @@ public class ToolUse : MonoBehaviour
         else
         {
             usingTool = false;
+            if(currentUse.tag == "Wood")
+            {
+                InventoryManager.wood++;
+            }
+            else if (currentUse.tag == "Stone")
+            {
+                InventoryManager.stone++;
+            }
 
-            //test line
+            //test lines
             Destroy(currentUse);
+            Debug.Log(InventoryManager.wood + " " + InventoryManager.stone);
             
             rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
             objectHealth = 3;
