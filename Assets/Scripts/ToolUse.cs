@@ -6,8 +6,11 @@ public class ToolUse : MonoBehaviour
     BasicMovement move;
     Collider2D collide;
     Transform breakableTransform;
+    GameObject currentUse;
     bool breakRequest = false;
-
+    bool usingTool = false;
+    short objectHealth = 3;
+    public float toolPosition = 0.5f;
 
     
     void Awake()
@@ -19,13 +22,20 @@ public class ToolUse : MonoBehaviour
     {
         //in update to get player input as quick as possible
         bool breakableInReach = IsFacingBreakable();
-        if(breakableInReach && Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E))
         {
-            //Debug.Log("In reach.");
-            breakRequest = true;
-            if(breakableTransform == null)
+            if(usingTool)
             {
-                breakRequest = false;
+                FinishTool();
+            }
+            else if(breakableInReach)
+            {
+                //Debug.Log("In reach.");
+                breakRequest = true;
+                if(breakableTransform == null)
+                {
+                    breakRequest = false;
+                }
             }
         } 
         else
@@ -42,7 +52,7 @@ public class ToolUse : MonoBehaviour
         {
             Debug.Log("Breakable");
             //get the player to the position, have them do a lil dance, yk
-            RockSmash(rb2d);
+            ReadyTool();
             
             //Destroy(breakableTransform.gameObject);
             breakRequest = false;
@@ -50,8 +60,27 @@ public class ToolUse : MonoBehaviour
         //same thing with jump, but make it tool use with tag "breakable"
     }
 
+
+    //temp GUI
+    void OnGUI()
+    {
+        if(usingTool)
+        {
+            GUIStyle style = new GUIStyle();
+            style.fontSize = 48;
+            style.normal.textColor = Color.red;
+            GUI.Label(new Rect(10, 10, 200 ,50), "Press E Four Times!", style);
+        }
+    }
+
     ///////////Non-Unity-Based Methods/////////////
 
+    /*
+        Method takes the last direction faced by the player character
+        and boxcasts a small distance in front of them.
+
+        This method can be modularized if input was changed to LayerMask type.
+    */
     public bool IsFacingBreakable()
     {
         //making sure that i call functions as least as possible. not super necc. but we ball
@@ -97,9 +126,39 @@ public class ToolUse : MonoBehaviour
         return grounded;
     }//end method
 
-    public void RockSmash(Rigidbody2D playerRB2D)  
+    public void ReadyTool()  
     {
+        usingTool = true;
+        rb2d.position = breakableTransform.position - new Vector3(toolPosition,0,0);
+        move.lastMovementDirection = new Vector2(1,0);
+        rb2d.linearVelocity = Vector2.zero;
+        rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+        currentUse = breakableTransform.gameObject;
 
+        
+        //freeze position
+        //allow for animations
+        //e is pressed three times
+        //rock is destroyed
+        //player is freed
+
+    }
+    public void FinishTool()
+    {
+        if(objectHealth > 0)
+        {
+            objectHealth--;
+        }
+        else
+        {
+            usingTool = false;
+
+            //test line
+            Destroy(currentUse);
+            
+            rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
+            objectHealth = 3;
+        }
     }
 
 
