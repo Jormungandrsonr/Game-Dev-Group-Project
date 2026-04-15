@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4226753243193286095}
   - component: {fileID: 8013358161750647756}
   - component: {fileID: 6396188169068648434}
+  - component: {fileID: 9172324469099926319}
   m_Layer: 3
   m_Name: rock_prefab
-  m_TagString: breakable
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,3 +135,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.53, y: 0.49112833}
   m_EdgeRadius: 0
+--- !u!114 &9172324469099926319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3836752132282134608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3e58c685e1c791cba59dd5117119d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 2
+  health: 3
+  type: 0

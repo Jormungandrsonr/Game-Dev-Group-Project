@@ -1,5 +1,6 @@
 using UnityEngine;
 
+using System;
 public class ToolUse : MonoBehaviour
 {
     Rigidbody2D rb2d;
@@ -7,6 +8,8 @@ public class ToolUse : MonoBehaviour
     Collider2D collide;
     Transform breakableTransform;
     GameObject currentUse;
+    TempLoot tempLootTable;
+    
     bool breakRequest = false;
     bool usingTool = false;
     short objectHealth = 3;
@@ -129,11 +132,24 @@ public class ToolUse : MonoBehaviour
     public void ReadyTool()  
     {
         usingTool = true;
+
         rb2d.position = breakableTransform.position - new Vector3(toolPosition,0,0);
         move.lastMovementDirection = new Vector2(1,0);
         rb2d.linearVelocity = Vector2.zero;
         rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+
         currentUse = breakableTransform.gameObject;
+        tempLootTable = currentUse.GetComponent<TempLoot>();
+        
+        if(tempLootTable == null)
+        {
+            Debug.Log("Loot Table not assigned to object");
+            rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
+            usingTool = false;
+            return;
+        }
+        objectHealth = tempLootTable.GetHealth();
+        
 
         
         //freeze position
@@ -145,6 +161,8 @@ public class ToolUse : MonoBehaviour
     }
     public void FinishTool()
     {
+        
+        
         if(objectHealth > 0)
         {
             objectHealth--;
@@ -152,21 +170,19 @@ public class ToolUse : MonoBehaviour
         else
         {
             usingTool = false;
-            if(currentUse.tag == "Wood")
-            {
-                InventoryManager.wood++;
-            }
-            else if (currentUse.tag == "Stone")
-            {
-                InventoryManager.stone++;
-            }
-
-            //test lines
-            Destroy(currentUse);
-            Debug.Log(InventoryManager.wood + " " + InventoryManager.stone);
+            //IResource resource = currentUse.GetComponent<IResource>();
             
+            
+            //test lines
+            InventoryManager.AddItem(tempLootTable.GetResourceType(), tempLootTable.GetAmount());
+            Debug.Log(InventoryManager.CheckItemCount(2) + "stones");
+            
+            Destroy(currentUse);
+            //Debug.Log(InventoryManager.wood + " " + InventoryManager.stone);
+                
             rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
             objectHealth = 3;
+            
         }
     }
 
