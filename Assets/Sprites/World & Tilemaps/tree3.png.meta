@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 7fad5864058c3f34f86f2c420ae640db
+guid: efe5bb35611577e43b0ad20e9a0ea44d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6074187079133600768
-    second: walltiles_0
-  - first:
-      213: -5631325514632842383
-    second: walltiles_1
+      213: -4579556511493083371
+    second: tree3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walltiles_0
+      name: tree3_0
       rect:
         serializedVersion: 2
-        x: 191
-        y: 703
-        width: 130
-        height: 66
+        x: 45
+        y: 3
+        width: 169
+        height: 247
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00469f0b80724bba0800000000000000
-      internalID: -6074187079133600768
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walltiles_1
-      rect:
-        serializedVersion: 2
-        x: 127
-        y: 63
-        width: 770
-        height: 574
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 17337bdc74389d1b0800000000000000
-      internalID: -5631325514632842383
+      spriteID: 51fa0a7cd952270c0800000000000000
+      internalID: -4579556511493083371
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      walltiles_0: -6074187079133600768
-      walltiles_1: -5631325514632842383
+      tree3_0: -4579556511493083371
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
