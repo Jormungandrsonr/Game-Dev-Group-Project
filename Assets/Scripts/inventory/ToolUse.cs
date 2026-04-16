@@ -159,7 +159,7 @@ public class ToolUse : MonoBehaviour
             usingTool = false;
             return;
         }
-        objectHealth = tempLootTable.GetHealth();
+        objectHealth = tempLootTable.GetHealth(); 
         
 
         
@@ -187,14 +187,25 @@ public class ToolUse : MonoBehaviour
         {
             usingTool = false;
             //IResource resource = currentUse.GetComponent<IResource>();
+            short currentResourceType = (short)tempLootTable.GetResourceType();
             
             
+            if(tempLootTable.fishable)
+            {
+                Debug.Log("Fish!");
+                //code for randomizing fish type
+                InventoryManager.AddItem(currentResourceType, tempLootTable.GetAmount());
+            }
+            else
+            {
+                InventoryManager.AddItem(currentResourceType, tempLootTable.GetAmount());
+                //Debug.Log(InventoryManager.CheckItemCount(currentResourceType) + "stones");
+            
+                //maybe a destroy animation here?
+                Destroy(currentUse);
+            }
             //test lines
-            InventoryManager.AddItem(tempLootTable.GetResourceType(), tempLootTable.GetAmount());
-            //Debug.Log(InventoryManager.CheckItemCount(tempLootTable.GetResourceType()) + "stones");
             
-            //maybe a destroy animation here?
-            Destroy(currentUse);
             //add a plus 1 with item animation to show what item was gained
             //Debug.Log(InventoryManager.wood + " " + InventoryManager.stone);
                 

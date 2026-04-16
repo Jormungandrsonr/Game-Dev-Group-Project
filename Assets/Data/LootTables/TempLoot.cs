@@ -13,6 +13,7 @@ public class TempLoot : MonoBehaviour
     //THIS IS TEMPORARY AND IS NOT MEANT TO BE KEPT
     //WE'RE USING FOR THE FINAL PROJECT THOUGH
     //THIS SHOULD HONESTLY BE A TYPE OF JSON FILE
+    public bool fishable = false;
     public int GetAmount()
     {
         return amount;
