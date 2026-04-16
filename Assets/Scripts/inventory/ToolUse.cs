@@ -191,9 +191,11 @@ public class ToolUse : MonoBehaviour
             
             //test lines
             InventoryManager.AddItem(tempLootTable.GetResourceType(), tempLootTable.GetAmount());
-            Debug.Log(InventoryManager.CheckItemCount(tempLootTable.GetResourceType()) + "stones");
+            //Debug.Log(InventoryManager.CheckItemCount(tempLootTable.GetResourceType()) + "stones");
             
+            //maybe a destroy animation here?
             Destroy(currentUse);
+            //add a plus 1 with item animation to show what item was gained
             //Debug.Log(InventoryManager.wood + " " + InventoryManager.stone);
                 
             rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
