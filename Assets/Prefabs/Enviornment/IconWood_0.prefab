@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6687040080186859341}
   - component: {fileID: 3404367953864334028}
   - component: {fileID: 6605168223505012111}
+  - component: {fileID: 1830600461720075590}
   m_Layer: 3
   m_Name: IconWood_0
-  m_TagString: breakable
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,3 +135,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.54, y: 0.52}
   m_EdgeRadius: 0
+--- !u!114 &1830600461720075590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3125732057128382518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3e58c685e1c791cba59dd5117119d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 2
+  health: 3
+  type: 1

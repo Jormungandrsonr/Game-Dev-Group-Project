@@ -1,6 +1,12 @@
 using UnityEngine;
 
 using System;
+
+/*
+    The purpose of this class is to be attached to the player character, and allow them to use tools to get resources.
+    The class includes methods to RayCast for breakable objects, freezing the player to the object, 
+    and giving them the resources from that object.
+*/
 public class ToolUse : MonoBehaviour
 {
     Rigidbody2D rb2d;
@@ -72,7 +78,7 @@ public class ToolUse : MonoBehaviour
             GUIStyle style = new GUIStyle();
             style.fontSize = 48;
             style.normal.textColor = Color.red;
-            GUI.Label(new Rect(10, 10, 200 ,50), "Press E Four Times!", style);
+            GUI.Label(new Rect(10, 10, 200 ,50), "Press E " + tempLootTable.health + " Times!", style);
         }
     }
 
@@ -129,6 +135,11 @@ public class ToolUse : MonoBehaviour
         return grounded;
     }//end method
 
+    /*
+        This method gets the player ready to use a tool to get a resource. 
+        This freezes the players position to the left of the obejct, 
+        and will unfreeze the player if no loot table is attached to the object.
+    */
     public void ReadyTool()  
     {
         usingTool = true;
@@ -159,11 +170,16 @@ public class ToolUse : MonoBehaviour
         //player is freed
 
     }
+
+    /*
+        This method will check if the object is ready to break, 
+        and if it is, it will unfreeze the player and give them the allocated resources.
+    */
     public void FinishTool()
     {
         
         
-        if(objectHealth > 0)
+        if(objectHealth > 1)
         {
             objectHealth--;
         }
@@ -175,7 +191,7 @@ public class ToolUse : MonoBehaviour
             
             //test lines
             InventoryManager.AddItem(tempLootTable.GetResourceType(), tempLootTable.GetAmount());
-            Debug.Log(InventoryManager.CheckItemCount(2) + "stones");
+            Debug.Log(InventoryManager.CheckItemCount(tempLootTable.GetResourceType()) + "stones");
             
             Destroy(currentUse);
             //Debug.Log(InventoryManager.wood + " " + InventoryManager.stone);

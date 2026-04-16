@@ -149,4 +149,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 2
   health: 3
-  type: 0
+  type: 2

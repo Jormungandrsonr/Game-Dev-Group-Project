@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/*
+    This class is a MonoBehaviour to be attached to a game object to give it resource properties.
+    Class includes object health, object type based on EnumItemSet.cs, and the amount the object should give the player.
+*/
 public class TempLoot : MonoBehaviour
 {
     public int amount = 2;
