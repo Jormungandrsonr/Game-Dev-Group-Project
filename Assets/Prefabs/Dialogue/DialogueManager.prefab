@@ -48,6 +48,8 @@ MonoBehaviour:
   textBox: {fileID: 0}
   speakerImage: {fileID: 0}
   dialogueGameObject: {fileID: 0}
+  choicePanel: {fileID: 0}
+  choiceButtonPrefab: {fileID: 7872379836150559599, guid: 54263b22e474f934fbfba61b273ee9eb, type: 3}
   typingSpeed: 0.03
   isTyping: 0
   dialogueFinished: 1
