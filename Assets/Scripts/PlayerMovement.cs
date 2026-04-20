@@ -6,24 +6,24 @@ public class PlayerMovement : BasicMovement
 
     Rigidbody2D rb2d;
     Animator animator;
-    SpriteRenderer sr;
+    SpriteRenderer sprite;
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         //animator = GetComponent<Animator>();
-        sr = GetComponent<SpriteRenderer>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        //We're going to use proper animations
-        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        //this will make it so only right animations have to be used
+        if(currentMovementDirection.x < 0)
         {
-            
-        }//end if
+            sprite.flipX = true;
+        }
         else
         {
-            
+            sprite.flipX = false;
         }
     }
     // Update is called once per frame
