@@ -195,7 +195,7 @@ public class ToolUse : MonoBehaviour
             
             if(tempLootTable.fishable)
             {
-                Debug.Log("Fish!");
+                //Debug.Log("Fish!");
                 int tempFishCaught = rnd.Next(1,100);
                 //10% for Fish 3, 30% for Fish 2, 60% for Fish 1
                 if(tempFishCaught > 90)

@@ -60,7 +60,7 @@ public class InventoryManager
     */
     public static int CheckItemCount(int itemType)
     {
-        Debug.Log(items[itemType] + " from check");
+        //Debug.Log(items[itemType] + " from check");
         return items[itemType];
     }
 }
