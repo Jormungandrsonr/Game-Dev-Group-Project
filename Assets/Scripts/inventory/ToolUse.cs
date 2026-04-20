@@ -1,6 +1,6 @@
 using UnityEngine;
-
 using System;
+
 
 /*
     The purpose of this class is to be attached to the player character, and allow them to use tools to get resources.
@@ -15,6 +15,7 @@ public class ToolUse : MonoBehaviour
     Transform breakableTransform;
     GameObject currentUse;
     TempLoot tempLootTable;
+    System.Random rnd;
     
     bool breakRequest = false;
     bool usingTool = false;
@@ -26,6 +27,8 @@ public class ToolUse : MonoBehaviour
     {
         move = GetComponent<BasicMovement>();
         rb2d = GetComponent<Rigidbody2D>();
+        rnd = new System.Random();
+        
     }
     void Update()
     {
@@ -193,8 +196,15 @@ public class ToolUse : MonoBehaviour
             if(tempLootTable.fishable)
             {
                 Debug.Log("Fish!");
-                //code for randomizing fish type
-                InventoryManager.AddItem(currentResourceType, tempLootTable.GetAmount());
+                int tempFishCaught = rnd.Next(1,100);
+                //10% for Fish 3, 30% for Fish 2, 60% for Fish 1
+                if(tempFishCaught > 90)
+                {tempFishCaught = 3;}
+                else if(tempFishCaught > 60)
+                {tempFishCaught = 2;}
+                else
+                {tempFishCaught = 1;}
+                InventoryManager.AddItem(currentResourceType + tempFishCaught, tempLootTable.GetAmount());
             }
             else
             {
