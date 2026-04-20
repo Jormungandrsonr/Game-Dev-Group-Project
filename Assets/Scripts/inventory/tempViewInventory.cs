@@ -6,14 +6,14 @@ public class tempViewInventory : MonoBehaviour
     void OnGUI()
     {
         GUIStyle style = new GUIStyle();
-            style.fontSize = 48;
+            style.fontSize = 32;
             style.normal.textColor = Color.red;
-            GUI.Label(new Rect(10, Screen.height - 40, 200 ,20), "I have" + InventoryManager.CheckItemCount(1) + "Wood", style);
-            GUI.Label(new Rect(10, Screen.height - 80, 200 ,20), "I have" + InventoryManager.CheckItemCount(2) + "Stone", style);
-            GUI.Label(new Rect(10, Screen.height - 120, 200 ,20), "I have" + InventoryManager.CheckItemCount(3) + "Fish1", style);
-            GUI.Label(new Rect(10, Screen.height - 160, 200 ,20), "I have" + InventoryManager.CheckItemCount(4) + "Fish2", style);
-            GUI.Label(new Rect(10, Screen.height - 200, 200 ,20), "I have" + InventoryManager.CheckItemCount(5) + "Fish3", style);
-            GUI.Label(new Rect(10, Screen.height - 240, 200 ,20), "I have" + InventoryManager.CheckItemCount(6) + "Gold", style);
+            GUI.Label(new Rect(10, Screen.height - 40, 200 ,20), InventoryManager.CheckItemCount(1) + "Wood", style);
+            GUI.Label(new Rect(10, Screen.height - 80, 200 ,20), InventoryManager.CheckItemCount(2) + "Stone", style);
+            GUI.Label(new Rect(10, Screen.height - 120, 200 ,20),InventoryManager.CheckItemCount(3) + "Fish1", style);
+            GUI.Label(new Rect(10, Screen.height - 160, 200 ,20), InventoryManager.CheckItemCount(4) + "Fish2", style);
+            GUI.Label(new Rect(10, Screen.height - 200, 200 ,20), InventoryManager.CheckItemCount(5) + "Fish3", style);
+            GUI.Label(new Rect(10, Screen.height - 240, 200 ,20), InventoryManager.CheckItemCount(6) + "Gold", style);
         
     }
 }

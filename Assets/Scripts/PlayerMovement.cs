@@ -10,21 +10,22 @@ public class PlayerMovement : BasicMovement
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        //this will make it so only right animations have to be used
-        if(currentMovementDirection.x < 0)
-        {
-            sprite.flipX = true;
-        }
-        else
-        {
-            sprite.flipX = false;
-        }
+        bool lookRightBool = lastMovementDirection.x != 0;
+        bool flipBool = lastMovementDirection.x < 0;
+        bool forwardBool = lastMovementDirection.y <= 0;
+
+        Debug.Log("Right "+ lookRightBool + " Left " + flipBool + " Forward " + forwardBool);
+
+        animator.SetBool("lookRight", lookRightBool);
+        sprite.flipX = flipBool;
+        animator.SetBool("forward", forwardBool);
+        animator.SetBool("backwards", !forwardBool);
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -53,7 +54,7 @@ public class PlayerMovement : BasicMovement
 
         SetLastMove(force);
         bool isMoving = force.magnitude > 0.001f;
-        //animator.SetBool("isWalking", isMoving);
+        animator.SetBool("isWalking", isMoving);
         
         rb2d.MovePosition(rb2d.position + force);
     }//end method
