@@ -48,6 +48,12 @@ TagManager:
   - name: Ground
     uniqueID: 524475145
     locked: 0
+  - name: TownFloors
+    uniqueID: 83283387
+    locked: 0
+  - name: BackWalls
+    uniqueID: 3940031349
+    locked: 0
   - name: Transisition
     uniqueID: 3101376361
     locked: 0
@@ -57,5 +63,16 @@ TagManager:
   - name: Player
     uniqueID: 254256131
     locked: 0
+  - name: FrontObstacle
+    uniqueID: 2600393899
+    locked: 0
+  - name: NPC
+    uniqueID: 954844785
+    locked: 0
+  - name: FrontWall
+    uniqueID: 1807119741
+    locked: 0
   m_RenderingLayers:
   - Default
+  - Objects
+  - Player

@@ -17,4 +17,10 @@ public class SceneChange : MonoBehaviour
             //SceneManager.UnloadSceneAsync(currentScene);
         }
     }
+
+    public void LoadScene()
+    {
+        SceneManager.LoadSceneAsync(nextScene);
+    }
+
 }
