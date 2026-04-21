@@ -6,25 +6,23 @@ public class PlayerMovement : BasicMovement
 
     Rigidbody2D rb2d;
     Animator animator;
-    SpriteRenderer sr;
+    SpriteRenderer sprite;
+    bool lookRightBool = false;
+    bool flipBool = false;
+    bool forwardBool = true;
+
+
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        //animator = GetComponent<Animator>();
-        sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        //We're going to use proper animations
-        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            
-        }//end if
-        else
-        {
-            
-        }
+        
+        
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -51,9 +49,39 @@ public class PlayerMovement : BasicMovement
             
         }
 
+        
+
         SetLastMove(force);
-        bool isMoving = force.magnitude > 0.001f;
-        //animator.SetBool("isWalking", isMoving);
+        if(currentMovementDirection != Vector2.zero && currentMovementDirection != lastMovementDirection)
+        {
+            lookRightBool = currentMovementDirection.x != 0;
+            flipBool = currentMovementDirection.x < 0;
+            forwardBool = currentMovementDirection.y <= 0; 
+        }
+        else
+        {
+            lookRightBool = lastMovementDirection.x != 0;
+            flipBool = lastMovementDirection.x < 0;
+            forwardBool = lastMovementDirection.y <= 0;   
+        }
+        
+
+        
+
+        //order for pipelining
+        animator.SetBool("lookRight", lookRightBool);
+        animator.SetBool("forward", forwardBool);
+
+        bool isMoving = currentMovementDirection.magnitude > 0.001f;
+
+        animator.SetBool("backwards", !forwardBool);
+        sprite.flipX = flipBool;
+        
+        
+        
+        animator.SetBool("isWalking", isMoving);
+
+        //Debug.Log("Is Moving " + isMoving +" Right "+ lookRightBool + " Left " + flipBool + " Forward " + forwardBool);
         
         rb2d.MovePosition(rb2d.position + force);
     }//end method

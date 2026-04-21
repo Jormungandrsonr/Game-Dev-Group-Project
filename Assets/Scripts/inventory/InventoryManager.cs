@@ -18,6 +18,9 @@ public class InventoryManager
 
 
     static int[]items = new int[(int)EnumItemSet.endPoint];
+    
+
+
 
     //add more fish
     //maybe add different tool types? future proofing, but may need to be in another file
@@ -57,7 +60,7 @@ public class InventoryManager
     */
     public static int CheckItemCount(int itemType)
     {
-        Debug.Log(items[itemType] + " from check");
+        //Debug.Log(items[itemType] + " from check");
         return items[itemType];
     }
 }
