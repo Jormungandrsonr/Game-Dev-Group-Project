@@ -18,4 +18,7 @@ public class TradeOffer : ScriptableObject
 
     [Header("On Success Event (optional)")]
     public UnityEvent onSuccess;
+
+    [Header("Upgrades")]
+    public bool upgradesTown = false;
 }

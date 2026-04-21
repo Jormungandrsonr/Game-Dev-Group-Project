@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2585fba63509c48a759c4c13ca961a, type: 3}
+  m_Name: Fish1
+  m_EditorClassIdentifier: 
+  costItem: 3
+  costAmount: 1
+  rewardItem: 6
+  rewardAmount: 1
+  successBranch: {fileID: 0}
+  failBranch: {fileID: 0}
+  onSuccess:
+    m_PersistentCalls:
+      m_Calls: []

@@ -184,13 +184,13 @@ public class DialogueManager : MonoBehaviour
     private void ExecuteTrade(TradeOffer trade)
     {
         bool canAfford = InventoryManager.CheckItemCount((int)trade.costItem) >= trade.costAmount;
-
         if (canAfford)
         {
             InventoryManager.RemoveItem((int)trade.costItem, trade.costAmount);
             InventoryManager.AddItem((int)trade.rewardItem, trade.rewardAmount);
             trade.onSuccess?.Invoke();
-
+            if (trade.upgradesTown)
+                TownManager.TryUpgrade();
             if (trade.successBranch != null)
             {
                 dialogueLines = trade.successBranch.lines;
