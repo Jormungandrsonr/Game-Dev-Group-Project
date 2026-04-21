@@ -73,7 +73,7 @@ public class PlayerMovement : BasicMovement
         animator.SetBool("forward", forwardBool);
 
         bool isMoving = currentMovementDirection.magnitude > 0.001f;
-        
+
         animator.SetBool("backwards", !forwardBool);
         sprite.flipX = flipBool;
         
