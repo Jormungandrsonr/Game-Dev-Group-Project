@@ -20,4 +20,10 @@ MonoBehaviour:
   - speakerName: Player
     dialogueText: Bye Bye
     speakerImage: {fileID: 1488681671123293868, guid: 87e24daf45b163a45a1abfdd0ab6fa76, type: 3}
-    choices: []
+    choices:
+    - choiceText: 
+      tradeOffer: {fileID: 0}
+      branchTree: {fileID: 0}
+      onChoiceSelected:
+        m_PersistentCalls:
+          m_Calls: []

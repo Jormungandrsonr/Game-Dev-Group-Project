@@ -150,10 +150,18 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("OnChoiceSelected called for: " + choice.choiceText);
         Debug.Log("Branch tree is null: " + (choice.branchTree == null));
 
+
         foreach (Transform child in choicePanel.transform)
             Destroy(child.gameObject);
         choicePanel.SetActive(false);
         waitingForChoice = false;
+
+        // If this choice has a trade, evaluate it first
+        if (choice.tradeOffer != null)
+        {
+            ExecuteTrade(choice.tradeOffer);
+            return;
+        }
 
         choice.onChoiceSelected?.Invoke();
 
@@ -169,6 +177,45 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("No branch tree, ending dialogue");
             dialogueFinished = true;
             dialogueGameObject.SetActive(false);
+        }
+    }
+
+    // Handles trade logic
+    private void ExecuteTrade(TradeOffer trade)
+    {
+        bool canAfford = InventoryManager.CheckItemCount((int)trade.costItem) >= trade.costAmount;
+        if (canAfford)
+        {
+            InventoryManager.RemoveItem((int)trade.costItem, trade.costAmount);
+            InventoryManager.AddItem((int)trade.rewardItem, trade.rewardAmount);
+            trade.onSuccess?.Invoke();
+            if (trade.upgradesTown)
+                TownManager.TryUpgrade();
+            if (trade.successBranch != null)
+            {
+                dialogueLines = trade.successBranch.lines;
+                currentIndex = 0;
+                typingCoroutine = StartCoroutine(TypeLine(dialogueLines[currentIndex]));
+            }
+            else
+            {
+                dialogueFinished = true;
+                dialogueGameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            if (trade.failBranch != null)
+            {
+                dialogueLines = trade.failBranch.lines;
+                currentIndex = 0;
+                typingCoroutine = StartCoroutine(TypeLine(dialogueLines[currentIndex]));
+            }
+            else
+            {
+                dialogueFinished = true;
+                dialogueGameObject.SetActive(false);
+            }
         }
     }
 }
