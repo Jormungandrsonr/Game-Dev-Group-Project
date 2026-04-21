@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Final Project CAP4052.slnx"
+    "dotnet.defaultSolution": "Game-Dev-Group-Project.slnx"
 }
