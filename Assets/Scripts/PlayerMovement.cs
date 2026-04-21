@@ -81,7 +81,7 @@ public class PlayerMovement : BasicMovement
         
         animator.SetBool("isWalking", isMoving);
 
-        Debug.Log("Is Moving " + isMoving +" Right "+ lookRightBool + " Left " + flipBool + " Forward " + forwardBool);
+        //Debug.Log("Is Moving " + isMoving +" Right "+ lookRightBool + " Left " + flipBool + " Forward " + forwardBool);
         
         rb2d.MovePosition(rb2d.position + force);
     }//end method
