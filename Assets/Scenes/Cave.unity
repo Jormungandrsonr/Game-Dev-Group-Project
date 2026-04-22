@@ -949,6 +949,10 @@ PrefabInstance:
       propertyPath: nextScene
       value: OfficialTown
       objectReference: {fileID: 0}
+    - target: {fileID: 2197043956101866834, guid: 329c37b75ac3203e697688b0b29e9bdc, type: 3}
+      propertyPath: spawnPointID
+      value: FromCave
+      objectReference: {fileID: 0}
     - target: {fileID: 3815538597576276130, guid: 329c37b75ac3203e697688b0b29e9bdc, type: 3}
       propertyPath: m_Enabled
       value: 0
