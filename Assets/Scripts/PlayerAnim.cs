@@ -2,24 +2,17 @@ using UnityEngine;
 
 public class PlayerAnim : BasicMovement
 {
-
-    Animator anim;
-    SpriteRenderer sprite;
-    void Awake()
+    static bool locked = false;
+    public static bool IsLocked()
     {
-        sprite = GetComponent<SpriteRenderer>();
-
+        return locked;
     }
-    // Update is called once per frame
-    void Update()
+    public static void Lock()
     {
-        if(currentMovementDirection.x < 0)
-        {
-            sprite.flipX = true;
-        }
-        else
-        {
-            sprite.flipX = false;
-        }
+        locked = true;
+    }
+    public static void Unlock()
+    {
+        locked = false;
     }
 }

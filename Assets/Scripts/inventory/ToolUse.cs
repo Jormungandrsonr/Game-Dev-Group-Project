@@ -153,6 +153,7 @@ public class ToolUse : MonoBehaviour
         move.lastMovementDirection = new Vector2(1,0);
         rb2d.linearVelocity = Vector2.zero;
         rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+        PlayerAnim.Lock();
 
         anim.SetBool("usingTool", usingTool);
         anim.SetBool("finishTool",false);
@@ -228,6 +229,7 @@ public class ToolUse : MonoBehaviour
             //Debug.Log(InventoryManager.wood + " " + InventoryManager.stone);
                 
             rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
+            PlayerAnim.Unlock();
             objectHealth = 3;
             
         }
