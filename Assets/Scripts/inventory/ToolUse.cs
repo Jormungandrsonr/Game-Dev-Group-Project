@@ -155,8 +155,8 @@ public class ToolUse : MonoBehaviour
         rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
         PlayerAnim.Lock();
 
-        anim.SetBool("usingTool", usingTool);
         anim.SetBool("finishTool",false);
+        anim.SetBool("finishRod",false);
 
         currentUse = breakableTransform.gameObject;
         tempLootTable = currentUse.GetComponent<TempLoot>();
@@ -168,6 +168,12 @@ public class ToolUse : MonoBehaviour
             usingTool = false;
             return;
         }
+        if(tempLootTable.fishable)
+        {
+            anim.SetBool("usingRod", true);
+            anim.SetTrigger("castRod");
+        }
+        else{anim.SetBool("usingTool", true);}
         objectHealth = tempLootTable.GetHealth(); 
         
 
@@ -186,7 +192,7 @@ public class ToolUse : MonoBehaviour
     */
     public void FinishTool()
     {
-        if(tempLootTable.fishable){}
+        if(tempLootTable.fishable){anim.SetTrigger("useRod");}
         else{anim.SetTrigger("useTool");}
 
         if(objectHealth > 1)
@@ -214,6 +220,7 @@ public class ToolUse : MonoBehaviour
                 else
                 {tempFishCaught = 1;}
                 InventoryManager.AddItem(currentResourceType + tempFishCaught, tempLootTable.GetAmount());
+                anim.SetBool("finishRod", true);
             }
             else
             {
