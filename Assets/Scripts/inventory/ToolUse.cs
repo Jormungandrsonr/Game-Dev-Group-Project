@@ -9,9 +9,10 @@ using System;
 */
 public class ToolUse : MonoBehaviour
 {
+
     Rigidbody2D rb2d;
     BasicMovement move;
-    Collider2D collide;
+    Animator anim;
     Transform breakableTransform;
     GameObject currentUse;
     TempLoot tempLootTable;
@@ -27,6 +28,7 @@ public class ToolUse : MonoBehaviour
     {
         move = GetComponent<BasicMovement>();
         rb2d = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         rnd = new System.Random();
         
     }
@@ -62,7 +64,7 @@ public class ToolUse : MonoBehaviour
         //fixedupdate to use game logic not based on fps
         if(breakRequest)
         {
-            Debug.Log("Breakable");
+            //Debug.Log("Breakable");
             //get the player to the position, have them do a lil dance, yk
             ReadyTool();
             
@@ -151,6 +153,10 @@ public class ToolUse : MonoBehaviour
         move.lastMovementDirection = new Vector2(1,0);
         rb2d.linearVelocity = Vector2.zero;
         rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+        PlayerAnim.Lock();
+
+        anim.SetBool("finishTool",false);
+        anim.SetBool("finishRod",false);
 
         currentUse = breakableTransform.gameObject;
         tempLootTable = currentUse.GetComponent<TempLoot>();
@@ -162,6 +168,12 @@ public class ToolUse : MonoBehaviour
             usingTool = false;
             return;
         }
+        if(tempLootTable.fishable)
+        {
+            anim.SetBool("usingRod", true);
+            anim.SetTrigger("castRod");
+        }
+        else{anim.SetBool("usingTool", true);}
         objectHealth = tempLootTable.GetHealth(); 
         
 
@@ -180,8 +192,9 @@ public class ToolUse : MonoBehaviour
     */
     public void FinishTool()
     {
-        
-        
+        if(tempLootTable.fishable){anim.SetTrigger("useRod");}
+        else{anim.SetTrigger("useTool");}
+
         if(objectHealth > 1)
         {
             objectHealth--;
@@ -189,6 +202,8 @@ public class ToolUse : MonoBehaviour
         else
         {
             usingTool = false;
+            anim.SetBool("usingTool", usingTool);
+            
             //IResource resource = currentUse.GetComponent<IResource>();
             short currentResourceType = (short)tempLootTable.GetResourceType();
             
@@ -205,12 +220,13 @@ public class ToolUse : MonoBehaviour
                 else
                 {tempFishCaught = 1;}
                 InventoryManager.AddItem(currentResourceType + tempFishCaught, tempLootTable.GetAmount());
+                anim.SetBool("finishRod", true);
             }
             else
             {
                 InventoryManager.AddItem(currentResourceType, tempLootTable.GetAmount());
                 //Debug.Log(InventoryManager.CheckItemCount(currentResourceType) + "stones");
-            
+                anim.SetBool("finishTool",true);
                 //maybe a destroy animation here?
                 Destroy(currentUse);
             }
@@ -220,6 +236,7 @@ public class ToolUse : MonoBehaviour
             //Debug.Log(InventoryManager.wood + " " + InventoryManager.stone);
                 
             rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
+            PlayerAnim.Unlock();
             objectHealth = 3;
             
         }
