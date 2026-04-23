@@ -76,6 +76,7 @@ public class PlayerMovement : BasicMovement
 
         animator.SetBool("backwards", !forwardBool);
         if(!PlayerAnim.IsLocked()){sprite.flipX = flipBool;}
+        else{sprite.flipX = false;}
         
         
         

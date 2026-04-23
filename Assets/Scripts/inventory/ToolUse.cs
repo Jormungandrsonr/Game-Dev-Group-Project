@@ -22,6 +22,7 @@ public class ToolUse : MonoBehaviour
     bool usingTool = false;
     short objectHealth = 3;
     public float toolPosition = 0.5f;
+    public float rodOffset = 0.5f;
 
     
     void Awake()
@@ -170,6 +171,7 @@ public class ToolUse : MonoBehaviour
         }
         if(tempLootTable.fishable)
         {
+            rb2d.position = breakableTransform.position - new Vector3(toolPosition + rodOffset,0,0);
             anim.SetBool("usingRod", true);
             anim.SetTrigger("castRod");
         }
