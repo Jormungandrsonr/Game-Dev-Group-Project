@@ -21,6 +21,7 @@ public class DialogueNPC : MonoBehaviour
         if (playerInRange && !dialogueStarted && Input.GetKeyDown(KeyCode.E))
         {
             int index = Mathf.Clamp(currentCheckpoint, 0, checkpoints.Length - 1);
+            Debug.Log("Index: "+index);
             DialogueManager.instance.StartDialogue(checkpoints[index].dialogueLines);
             dialogueStarted = true;
         }
