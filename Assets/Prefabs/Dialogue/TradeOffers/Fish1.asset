@@ -16,8 +16,9 @@ MonoBehaviour:
   costAmount: 1
   rewardItem: 6
   rewardAmount: 1
-  successBranch: {fileID: 0}
-  failBranch: {fileID: 0}
+  successBranch: {fileID: 11400000, guid: befe14d9c9d6000408c555c0d199ce97, type: 2}
+  failBranch: {fileID: 11400000, guid: 2407cbc0f04d99c489f1d3214ceba4ca, type: 2}
   onSuccess:
     m_PersistentCalls:
       m_Calls: []
+  upgradesTown: 0

@@ -724,6 +724,10 @@ PrefabInstance:
       value: FishMerchantTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: dialogueLines.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -754,6 +758,14 @@ PrefabInstance:
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: dialogueLines.Array.data[2].choices.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: dialogueLines.Array.data[1].choices.Array.data[0].branchTree
@@ -795,6 +807,91 @@ PrefabInstance:
       propertyPath: dialogueLines.Array.data[2].choices.Array.data[0].tradeOffer
       value: 
       objectReference: {fileID: 11400000, guid: 95c757620037120458aa919920ecdfac, type: 2}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[0].speakerName
+      value: Fin
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[1].speakerName
+      value: Turt
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[0].speakerName
+      value: Turt
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].speakerName
+      value: Turt
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[0].dialogueText
+      value: Hi Mr. Turt
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[0].speakerImage
+      value: 
+      objectReference: {fileID: -7420315610718431094, guid: 0d92e73e74cb02d4d8a676351c6fb884, type: 3}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[1].dialogueText
+      value: Oh Hey Fin, heard you needed some cash. well if you catch some fish
+        up at the beach I'll be happy to buy them from you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[1].speakerImage
+      value: 
+      objectReference: {fileID: -7420315610718431094, guid: 0d92e73e74cb02d4d8a676351c6fb884, type: 3}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[0].dialogueText
+      value: Got any fish to sell?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[0].speakerImage
+      value: 
+      objectReference: {fileID: -7420315610718431094, guid: 0d92e73e74cb02d4d8a676351c6fb884, type: 3}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].dialogueText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].speakerImage
+      value: 
+      objectReference: {fileID: -7420315610718431094, guid: 0d92e73e74cb02d4d8a676351c6fb884, type: 3}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[0].choiceText
+      value: Small Fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[0].tradeOffer
+      value: 
+      objectReference: {fileID: 11400000, guid: 53ed6575ebc421f47b3af8caae447c0a, type: 2}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[1].choiceText
+      value: Medium Fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[1].tradeOffer
+      value: 
+      objectReference: {fileID: 11400000, guid: f37a405ff26084f46baac2fbbda662ef, type: 2}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[2].choiceText
+      value: Large Fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[2].tradeOffer
+      value: 
+      objectReference: {fileID: 11400000, guid: ba1bf6bd139eec94aad0a04008184893, type: 2}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[3].choiceText
+      value: Leave
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[3].tradeOffer
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: dialogueLines.Array.data[1].choices.Array.data[0].onChoiceSelected.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -50022,6 +50119,10 @@ PrefabInstance:
       value: GarrisonTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: dialogueLines.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -50048,6 +50149,14 @@ PrefabInstance:
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: dialogueLines.Array.data[2].choices.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: dialogueLines.Array.data[1].choices.Array.data[0].branchTree
@@ -50090,6 +50199,82 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 95c757620037120458aa919920ecdfac, type: 2}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[0].speakerName
+      value: Garry
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[1].speakerName
+      value: Garry
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[0].speakerName
+      value: Garry
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].speakerName
+      value: Garry
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[2].speakerName
+      value: Garry
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[0].dialogueText
+      value: I heard about the invasion. We need to upgrade the town guards
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[0].speakerImage
+      value: 
+      objectReference: {fileID: -2446869645757459770, guid: c30dfccc97dec704d8ce54340cd4a7a6, type: 3}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[1].dialogueText
+      value: Talk to Fisherman Turt to raise some funds.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[1].speakerImage
+      value: 
+      objectReference: {fileID: -2446869645757459770, guid: c30dfccc97dec704d8ce54340cd4a7a6, type: 3}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[0].dialogueText
+      value: You got the gold?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[0].speakerImage
+      value: 
+      objectReference: {fileID: -2446869645757459770, guid: c30dfccc97dec704d8ce54340cd4a7a6, type: 3}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].dialogueText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].speakerImage
+      value: 
+      objectReference: {fileID: -2446869645757459770, guid: c30dfccc97dec704d8ce54340cd4a7a6, type: 3}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[2].dialogueText
+      value: You got the gold?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[2].speakerImage
+      value: 
+      objectReference: {fileID: -2446869645757459770, guid: c30dfccc97dec704d8ce54340cd4a7a6, type: 3}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[0].choiceText
+      value: Upgrade Guards
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[0].tradeOffer
+      value: 
+      objectReference: {fileID: 11400000, guid: ac11147686195b245a0cfdbbf8998fdf, type: 2}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[1].choiceText
+      value: Leave
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: dialogueLines.Array.data[1].choices.Array.data[0].onChoiceSelected.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -50110,8 +50295,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[0].onChoiceSelected.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: dialogueLines.Array.data[1].choices.Array.data[0].onChoiceSelected.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: TownManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[0].onChoiceSelected.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: dialogueLines.Array.data[1].choices.Array.data[0].onChoiceSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -70146,6 +70339,10 @@ PrefabInstance:
       value: ConstructionWorkerTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: dialogueLines.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -70179,6 +70376,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: dialogueLines.Array.data[2].choices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
@@ -70226,6 +70431,80 @@ PrefabInstance:
       value: leave
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[0].speakerName
+      value: Wally
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[1].speakerName
+      value: Wally
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[0].speakerName
+      value: Wally
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].speakerName
+      value: Wally
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[2].speakerName
+      value: Wally
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[0].dialogueText
+      value: Sup dude, Mayor told me we need these walls upgraded.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[0].speakerImage
+      value: 
+      objectReference: {fileID: 129065847108892043, guid: dd48752a03c15a545b8409bc7f5b89c0, type: 3}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[1].dialogueText
+      value: Your gonna have to gather some wood from the trees and there are rocks
+        to mine in hte south cave
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[1].speakerImage
+      value: 
+      objectReference: {fileID: 129065847108892043, guid: dd48752a03c15a545b8409bc7f5b89c0, type: 3}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[0].dialogueText
+      value: Yo you got the resources?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[0].speakerImage
+      value: 
+      objectReference: {fileID: 129065847108892043, guid: dd48752a03c15a545b8409bc7f5b89c0, type: 3}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].dialogueText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].speakerImage
+      value: 
+      objectReference: {fileID: 129065847108892043, guid: dd48752a03c15a545b8409bc7f5b89c0, type: 3}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[2].dialogueText
+      value: Your gonna have to gather some wood from the trees and there are rocks
+        to mine in the south cave
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[0].choiceText
+      value: Upgrade Town
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[0].tradeOffer
+      value: 
+      objectReference: {fileID: 11400000, guid: 95c757620037120458aa919920ecdfac, type: 2}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[1].choiceText
+      value: Leave
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: dialogueLines.Array.data[1].choices.Array.data[0].onChoiceSelected.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -70246,8 +70525,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[0].onChoiceSelected.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: dialogueLines.Array.data[1].choices.Array.data[0].onChoiceSelected.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[0].onChoiceSelected.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: dialogueLines.Array.data[1].choices.Array.data[0].onChoiceSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

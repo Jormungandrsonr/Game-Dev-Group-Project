@@ -27,7 +27,10 @@ public class DialogueNPC : MonoBehaviour
         }
 
         if (dialogueStarted && DialogueManager.instance.dialogueFinished)
+        {
             dialogueStarted = false;
+            AdvanceCheckpoint(); // auto-advance when dialogue ends
+        }
     }
 
     // Call this from a UnityEvent on any DialogueChoice to advance to the next checkpoint

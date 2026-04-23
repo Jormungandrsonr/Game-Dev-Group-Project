@@ -10,14 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a685c6ca74d642c45a620af1625158f8, type: 3}
-  m_Name: BluePill
+  m_Name: GuardEnough
   m_EditorClassIdentifier: 
   lines:
-  - speakerName: Turt
-    dialogueText: you chose the Blue pill
-    speakerImage: {fileID: -4930946532607477187, guid: afb1e00c5e7a23a41afc54e10d9ab8bd, type: 3}
-    choices: []
-  - speakerName: Player
-    dialogueText: Ok then, bye
-    speakerImage: {fileID: 1488681671123293868, guid: 87e24daf45b163a45a1abfdd0ab6fa76, type: 3}
+  - speakerName: Gary
+    dialogueText: Thank you for your assitance.
+    speakerImage: {fileID: -2446869645757459770, guid: c30dfccc97dec704d8ce54340cd4a7a6, type: 3}
     choices: []

@@ -61,7 +61,6 @@ public class DialogueManager : MonoBehaviour
                 return;
             }
 
-            // NEW: block E from advancing dialogue while a choice is displayed
             if (waitingForChoice) return;
 
             if (isTyping)
@@ -183,10 +182,13 @@ public class DialogueManager : MonoBehaviour
     // Handles trade logic
     private void ExecuteTrade(TradeOffer trade)
     {
-        bool canAfford = InventoryManager.CheckItemCount((int)trade.costItem) >= trade.costAmount;
+        bool canAfford = InventoryManager.CheckItemCount((int)trade.costItem) >= trade.costAmount
+               && InventoryManager.CheckItemCount((int)trade.costItem2) >= trade.costAmount2;
         if (canAfford)
         {
             InventoryManager.RemoveItem((int)trade.costItem, trade.costAmount);
+            if (trade.costAmount2 > 0)
+                InventoryManager.RemoveItem((int)trade.costItem2, trade.costAmount2);
             InventoryManager.AddItem((int)trade.rewardItem, trade.rewardAmount);
             trade.onSuccess?.Invoke();
             if (trade.upgradesTown)

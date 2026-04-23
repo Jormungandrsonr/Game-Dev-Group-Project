@@ -8,6 +8,9 @@ public class TradeOffer : ScriptableObject
     public EnumItemSet costItem;
     public int costAmount;
 
+    public EnumItemSet costItem2;
+    public int costAmount2;
+
     [Header("Reward")]
     public EnumItemSet rewardItem;
     public int rewardAmount;

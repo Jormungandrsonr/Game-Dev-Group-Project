@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad2585fba63509c48a759c4c13ca961a, type: 3}
-  m_Name: TownUpgrade
+  m_Name: CityUpgrade
   m_EditorClassIdentifier: 
   costItem: 1
-  costAmount: 2
+  costAmount: 10
   costItem2: 2
-  costAmount2: 2
+  costAmount2: 10
   rewardItem: 0
   rewardAmount: 0
-  successBranch: {fileID: 11400000, guid: a5ae5fc33cf90da4a88508fd2d68334c, type: 2}
-  failBranch: {fileID: 11400000, guid: bc6ad7066962cab4996c7e42d715d5ef, type: 2}
+  successBranch: {fileID: 11400000, guid: bc6ad7066962cab4996c7e42d715d5ef, type: 2}
+  failBranch: {fileID: 11400000, guid: a5ae5fc33cf90da4a88508fd2d68334c, type: 2}
   onSuccess:
     m_PersistentCalls:
       m_Calls:
@@ -35,4 +35,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  upgradesTown: 0
+  upgradesTown: 1
