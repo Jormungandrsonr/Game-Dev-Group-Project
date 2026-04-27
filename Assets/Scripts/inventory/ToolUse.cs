@@ -20,9 +20,16 @@ public class ToolUse : MonoBehaviour
     
     bool breakRequest = false;
     bool usingTool = false;
+    bool fishing = false;
+    bool fishOnLine = false;
     short objectHealth = 3;
+    short fishReel = 0;
+    char currentReel = 'P';
+    float currentTime;
+    int currentTimeBlock;
     public float toolPosition = 0.5f;
     public float rodOffset = 0.5f;
+    public float fishTime = 3f;
 
     
     void Awake()
@@ -37,6 +44,35 @@ public class ToolUse : MonoBehaviour
     {
         //in update to get player input as quick as possible
         bool breakableInReach = IsFacingBreakable();
+        if(fishing)
+        {
+            if(fishOnLine)
+            {
+                if(fishReel == 0 && Input.GetKeyDown(KeyCode.P))
+                {
+                    anim.SetTrigger("useRod");
+                    currentReel = 'Y';
+                    fishReel++;
+                }
+                else if (fishReel == 1 && Input.GetKeyDown(KeyCode.Y))
+                {
+                    anim.SetTrigger("useRod");
+                    currentReel = 'R';
+                    fishReel++;
+                }
+                else if (fishReel == 2 && Input.GetKeyDown(KeyCode.R))
+                {
+                    anim.SetTrigger("useRod");
+                    currentReel = 'P';
+                    CatchFish(2);
+                    fishReel = 0;
+                }
+            }
+            else if(FishOnLine())
+            {
+                fishOnLine = true;
+            }
+        }
         if(Input.GetKeyDown(KeyCode.E))
         {
             if(usingTool)
@@ -79,12 +115,16 @@ public class ToolUse : MonoBehaviour
     //temp GUI
     void OnGUI()
     {
-        if(usingTool)
-        {
-            GUIStyle style = new GUIStyle();
+        GUIStyle style = new GUIStyle();
             style.fontSize = 48;
             style.normal.textColor = Color.red;
+        if(usingTool)
+        {
             GUI.Label(new Rect(10, 10, 200 ,50), "Press E " + tempLootTable.health + " Times!", style);
+        }
+        if(fishOnLine)
+        {
+            GUI.Label(new Rect(10, 10, 200 ,50), "Press " + currentReel + "!!!", style);
         }
     }
 
@@ -172,6 +212,9 @@ public class ToolUse : MonoBehaviour
         if(tempLootTable.fishable)
         {
             rb2d.position = breakableTransform.position - new Vector3(toolPosition + rodOffset,0,0);
+            usingTool = false;
+            fishing = true;
+            CastRod();
             anim.SetBool("usingRod", true);
             anim.SetTrigger("castRod");
         }
@@ -194,8 +237,7 @@ public class ToolUse : MonoBehaviour
     */
     public void FinishTool()
     {
-        if(tempLootTable.fishable){anim.SetTrigger("useRod");}
-        else{anim.SetTrigger("useTool");}
+        anim.SetTrigger("useTool");
 
         if(objectHealth > 1)
         {
@@ -212,17 +254,7 @@ public class ToolUse : MonoBehaviour
             
             if(tempLootTable.fishable)
             {
-                //Debug.Log("Fish!");
-                int tempFishCaught = rnd.Next(1,100);
-                //10% for Fish 3, 30% for Fish 2, 60% for Fish 1
-                if(tempFishCaught > 90)
-                {tempFishCaught = 3;}
-                else if(tempFishCaught > 60)
-                {tempFishCaught = 2;}
-                else
-                {tempFishCaught = 1;}
-                InventoryManager.AddItem(currentResourceType + tempFishCaught, tempLootTable.GetAmount());
-                anim.SetBool("finishRod", true);
+                CatchFish(currentResourceType);
             }
             else
             {
@@ -242,6 +274,48 @@ public class ToolUse : MonoBehaviour
             objectHealth = 3;
             
         }
+    }
+
+    //have it cast the rod, 
+    //make the time and time interval into solid things 
+    //make it wait a certain time
+    //animation, quick time event (p[ull], y[ank] ,r[eel])
+    public void CastRod()
+    {
+        currentTime = GameTime.GetTime();
+        currentTimeBlock = GameTime.GetTimeBlock();
+        currentTime += (currentTimeBlock * GameTime.timeInterval);
+    }
+
+    public bool FishOnLine()
+    {
+        float tempTime = GameTime.GetTime();
+        tempTime += GameTime.GetTimeBlock() * GameTime.timeInterval;
+        tempTime -= currentTime;
+        if(tempTime >= fishTime)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public void CatchFish(short currentResourceType)
+    {
+            //Debug.Log("Fish!");
+            int tempFishCaught = rnd.Next(1,100);
+            //10% for Fish 3, 30% for Fish 2, 60% for Fish 1
+            if(tempFishCaught > 90)
+            {tempFishCaught = 3;}
+            else if(tempFishCaught > 60)
+            {tempFishCaught = 2;}
+            else
+            {tempFishCaught = 1;}
+            InventoryManager.AddItem(currentResourceType + tempFishCaught, tempLootTable.GetAmount());
+            anim.SetBool("finishRod", true);
+            fishing = false;
+            fishOnLine = false;
+            rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
+            PlayerAnim.Unlock();
     }
 
 
