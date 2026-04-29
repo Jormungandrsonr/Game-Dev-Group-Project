@@ -6,12 +6,12 @@ public class GameTime : MonoBehaviour
     static int currentTimeBlock = 0;
     static float time = 0f;
     public static float timeInterval = 10f;
-    public int endTime = 6;
+    public static int endTime = 16;
+    public bool showGUI = false;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        
+            
     }
 
     // Update is called once per frame
@@ -22,36 +22,39 @@ public class GameTime : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(currentTimeBlock > endTime)
+        if(currentTimeBlock >= endTime)
         {
             dayEnded = true;
 
             //do stuff regarding game time
         }  
-        if(time > timeInterval)
+        else if(time > timeInterval)
         {
             time = 0;
             currentTimeBlock++;
         }
-        time+= Time.fixedDeltaTime;
+        else{time+= Time.fixedDeltaTime;}
     }
 
     //temp gui
+    
     void OnGUI()
-    {
-        if(!dayEnded)
+    {   if(showGUI)
         {
-            GUIStyle style = new GUIStyle();
-            style.fontSize = 48;
-            style.normal.textColor = Color.red;
-            GUI.Label(new Rect(Screen.width - 320, 10, 200 ,50), "Time is " + (int)time+ "\nIn Time Block " + currentTimeBlock, style);
-        }
-        else
-        {
-            GUIStyle style = new GUIStyle();
-            style.fontSize = 48;
-            style.normal.textColor = Color.red;
-            GUI.Label(new Rect(Screen.width - 220, 10, 200 ,50), "Day has Ended!", style);
+            if(!dayEnded)
+            {
+                GUIStyle style = new GUIStyle();
+                style.fontSize = 48;
+                style.normal.textColor = Color.red;
+                GUI.Label(new Rect(10, 10, 200 ,50), "Time is " + (int)time+ "\nIn Time Block " + currentTimeBlock, style);
+            }
+            else
+            {
+                GUIStyle style = new GUIStyle();
+                style.fontSize = 48;
+                style.normal.textColor = Color.red;
+                GUI.Label(new Rect(10, 10, 200 ,50), "Day has Ended!", style);
+            }
         }
     }
 
@@ -59,6 +62,12 @@ public class GameTime : MonoBehaviour
     public void ForceFinishDay()
     {
         //stuff regarding end of game day
+    }
+    public void RestartDay()
+    {
+        currentTimeBlock = 0;
+        time = 0;
+        dayEnded = false;
     }
 
     public static float GetTime()
