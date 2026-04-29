@@ -25,6 +25,8 @@ public class GameTime : MonoBehaviour
         if(currentTimeBlock > endTime)
         {
             dayEnded = true;
+
+            //do stuff regarding game time
         }  
         if(time > timeInterval)
         {
@@ -54,7 +56,10 @@ public class GameTime : MonoBehaviour
     }
 
     /////// Non Unity Methods ///////
-    
+    public void ForceFinishDay()
+    {
+        //stuff regarding end of game day
+    }
 
     public static float GetTime()
     {
