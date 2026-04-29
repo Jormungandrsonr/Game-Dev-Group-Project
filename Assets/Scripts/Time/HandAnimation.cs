@@ -12,18 +12,20 @@ public class HandAnimation : MonoBehaviour
         rect = GetComponent<RectTransform>();
         intervals = GameTime.endTime/16;
         //Debug.Log("Clock Intervals in " + intervals);
+        rect.SetLocalPositionAndRotation(rect.transform.localPosition, Quaternion.Euler(0,0, -22.5f * tempTimeBlock));
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        workingTimeBlock = GameTime.GetTimeBlock() - tempTimeBlock;
-        //Debug.Log("Temp: " + tempTimeBlock + " Working: " + workingTimeBlock);
+        //rect.Rotate(new Vector3(0,0,-22.5f * tempTimeBlock));
+        rect.SetLocalPositionAndRotation(rect.transform.localPosition, Quaternion.Euler(0,0, -22.5f * tempTimeBlock));
+        workingTimeBlock = DayTime.GetCurrentTimeBlock() - tempTimeBlock;
+        Debug.Log("Temp: " + tempTimeBlock + " Working: " + workingTimeBlock);
         if(workingTimeBlock >= intervals)
         {
-            rect.Rotate(new Vector3(0,0,-22.5f));
             workingTimeBlock = 0;
-            tempTimeBlock = GameTime.GetTimeBlock();
+            tempTimeBlock = DayTime.GetCurrentTimeBlock();
         }
     }
     public void RestartAnimation()

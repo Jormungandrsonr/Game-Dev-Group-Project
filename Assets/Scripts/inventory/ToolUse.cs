@@ -282,15 +282,15 @@ public class ToolUse : MonoBehaviour
     //animation, quick time event (p[ull], y[ank] ,r[eel])
     public void CastRod()
     {
-        currentTime = GameTime.GetTime();
-        currentTimeBlock = GameTime.GetTimeBlock();
+        currentTime = DayTime.GetCurrentTime();
+        currentTimeBlock = DayTime.GetCurrentTimeBlock();
         currentTime += (currentTimeBlock * GameTime.timeInterval);
     }
 
     public bool FishOnLine()
     {
-        float tempTime = GameTime.GetTime();
-        tempTime += GameTime.GetTimeBlock() * GameTime.timeInterval;
+        float tempTime = DayTime.GetCurrentTime();
+        tempTime += DayTime.GetCurrentTimeBlock() * GameTime.timeInterval;
         tempTime -= currentTime;
         if(tempTime >= fishTime)
         {

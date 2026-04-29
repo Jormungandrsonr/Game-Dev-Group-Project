@@ -3,15 +3,18 @@ using UnityEngine;
 public class GameTime : MonoBehaviour
 {
     bool dayEnded = false;
-    static int currentTimeBlock = 0;
-    static float time = 0f;
     public static float timeInterval = 10f;
     public static int endTime = 16;
     public bool showGUI = false;
+
+    static float tempTime = 0;
+    static int tempTimeBlock = 0;
+
+    DayTime timeObject;
     
     void Awake()
     {
-            
+        timeObject = new DayTime();
     }
 
     // Update is called once per frame
@@ -22,18 +25,26 @@ public class GameTime : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(currentTimeBlock >= endTime)
+        tempTime = DayTime.GetCurrentTime();
+        tempTimeBlock = DayTime.GetCurrentTimeBlock();
+
+        if(tempTimeBlock >= endTime)
         {
             dayEnded = true;
 
             //do stuff regarding game time
         }  
-        else if(time > timeInterval)
+        else if(tempTime > timeInterval)
         {
-            time = 0;
-            currentTimeBlock++;
+            //time = 0;
+            DayTime.SetCurrentTime(0);
+            //currentTimeBlock++;
+            DayTime.SetCurrentTimeBlock(tempTimeBlock+1);
         }
-        else{time+= Time.fixedDeltaTime;}
+        else
+        {
+            DayTime.SetCurrentTime(tempTime + Time.fixedDeltaTime);
+        }
     }
 
     //temp gui
@@ -46,7 +57,7 @@ public class GameTime : MonoBehaviour
                 GUIStyle style = new GUIStyle();
                 style.fontSize = 48;
                 style.normal.textColor = Color.red;
-                GUI.Label(new Rect(10, 10, 200 ,50), "Time is " + (int)time+ "\nIn Time Block " + currentTimeBlock, style);
+                GUI.Label(new Rect(10, 10, 200 ,50), "Time is " + (int)DayTime.GetCurrentTime()+ "\nIn Time Block " + DayTime.GetCurrentTimeBlock(), style);
             }
             else
             {
@@ -65,17 +76,8 @@ public class GameTime : MonoBehaviour
     }
     public void RestartDay()
     {
-        currentTimeBlock = 0;
-        time = 0;
+        DayTime.SetCurrentTimeBlock(0);
+        DayTime.SetCurrentTime(0);
         dayEnded = false;
-    }
-
-    public static float GetTime()
-    {
-        return time;
-    }
-    public static int GetTimeBlock()
-    {
-        return currentTimeBlock;
     }
 }
