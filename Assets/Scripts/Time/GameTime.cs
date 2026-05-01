@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameTime : MonoBehaviour
 {
@@ -28,7 +29,11 @@ public class GameTime : MonoBehaviour
         tempTime = DayTime.GetCurrentTime();
         tempTimeBlock = DayTime.GetCurrentTimeBlock();
 
-        if(tempTimeBlock >= endTime)
+        //Win Con
+        if (TownManager.instance != null && TownManager.instance.defenseValue >= 5000)
+            ForceFinishDay();
+
+        if (tempTimeBlock >= endTime)
         {
             dayEnded = true;
 
@@ -72,7 +77,13 @@ public class GameTime : MonoBehaviour
     /////// Non Unity Methods ///////
     public void ForceFinishDay()
     {
-        //stuff regarding end of game day
+        DayTime.SetCurrentTimeBlock(endTime);
+        dayEnded = true;
+        if (GameData.instance != null)
+            GameData.instance.SubmitHighscore();
+
+        SceneManager.LoadSceneAsync("Ending");
+
     }
     public void RestartDay()
     {

@@ -8,6 +8,7 @@ public class TownManager : MonoBehaviour
     [Header("Town Status")]
     public int townLevel = 1;
     public int maxTownLevel = 3;
+    public int defenseValue = 0;
 
     [Header("Town Tilemaps")]
     public GameObject townStart;
@@ -20,6 +21,9 @@ public class TownManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += OnSceneLoaded;
+
+        if (PlayerPrefs.HasKey("TownLevel"))
+            townLevel = PlayerPrefs.GetInt("TownLevel", 1);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -45,12 +49,27 @@ public class TownManager : MonoBehaviour
         townLevel++;
         Debug.Log("Town upgraded to level " + townLevel);
         SetTownVisual();
+
+        if (GameData.instance != null) GameData.instance.SaveTownLevel();
     }
 
+    private void UpgradeDefense()
+    {
+        defenseValue += 1000;
+    }
+
+    //Town
     public static void TryUpgrade()
     {
         if (instance != null)
             instance.UpgradeTown();
+    }
+
+    //Defense
+    public static void TryUpgradeDefense()
+    {
+        if (instance != null)
+            instance.UpgradeDefense();
     }
 
     private void SetTownVisual()
@@ -60,5 +79,8 @@ public class TownManager : MonoBehaviour
         townStart?.SetActive(townLevel == 1);
         townUpgrade1?.SetActive(townLevel == 2);
         townUpgrade2?.SetActive(townLevel == 3);
+
+        foreach (TownLevelObject obj in FindObjectsByType<TownLevelObject>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+            obj.UpdateVisibility();
     }
 }

@@ -262,7 +262,13 @@ public class ToolUse : MonoBehaviour
                 //Debug.Log(InventoryManager.CheckItemCount(currentResourceType) + "stones");
                 anim.SetBool("finishTool",true);
                 //maybe a destroy animation here?
-                Destroy(currentUse);
+
+                //I changed this to have resources not reload on scene change. Peter
+                MinableResource minable = currentUse.GetComponent<MinableResource>();
+                if (minable != null)
+                    minable.OnMined();
+                else
+                    Destroy(currentUse);
             }
             //test lines
             

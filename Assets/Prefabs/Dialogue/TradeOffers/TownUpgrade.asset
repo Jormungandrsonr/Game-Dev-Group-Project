@@ -13,26 +13,15 @@ MonoBehaviour:
   m_Name: TownUpgrade
   m_EditorClassIdentifier: 
   costItem: 1
-  costAmount: 2
+  costAmount: 1
   costItem2: 2
-  costAmount2: 2
+  costAmount2: 1
   rewardItem: 0
   rewardAmount: 0
   successBranch: {fileID: 11400000, guid: a5ae5fc33cf90da4a88508fd2d68334c, type: 2}
   failBranch: {fileID: 11400000, guid: bc6ad7066962cab4996c7e42d715d5ef, type: 2}
   onSuccess:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4884561016494079659, guid: da528d0ccb63b2e4bb3cc06057227613, type: 3}
-        m_TargetAssemblyTypeName: TownManager, Assembly-CSharp
-        m_MethodName: TryUpgrade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  upgradesTown: 0
+      m_Calls: []
+  upgradesTown: 1
+  upgradesDefense: 1

@@ -182,8 +182,10 @@ public class DialogueManager : MonoBehaviour
     // Handles trade logic
     private void ExecuteTrade(TradeOffer trade)
     {
+        Debug.Log("upgradesTown: " + trade.upgradesTown + " upgradesDefense: " + trade.upgradesDefense);
+
         bool canAfford = InventoryManager.CheckItemCount((int)trade.costItem) >= trade.costAmount
-               && InventoryManager.CheckItemCount((int)trade.costItem2) >= trade.costAmount2;
+               && (trade.costAmount2 == 0 || InventoryManager.CheckItemCount((int)trade.costItem2) >= trade.costAmount2);
         if (canAfford)
         {
             InventoryManager.RemoveItem((int)trade.costItem, trade.costAmount);
@@ -193,6 +195,12 @@ public class DialogueManager : MonoBehaviour
             trade.onSuccess?.Invoke();
             if (trade.upgradesTown)
                 TownManager.TryUpgrade();
+            if (trade.upgradesDefense)
+            {
+                Debug.Log("Upgrading defense, current value: " + TownManager.instance.defenseValue);
+                TownManager.TryUpgradeDefense();
+                Debug.Log("Defense after upgrade: " + TownManager.instance.defenseValue);
+            }   
             if (trade.successBranch != null)
             {
                 dialogueLines = trade.successBranch.lines;

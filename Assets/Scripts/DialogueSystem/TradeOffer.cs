@@ -24,4 +24,7 @@ public class TradeOffer : ScriptableObject
 
     [Header("Upgrades")]
     public bool upgradesTown = false;
+    public bool upgradesDefense = false;
+
+    
 }

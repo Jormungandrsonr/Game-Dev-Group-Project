@@ -24,3 +24,4 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   upgradesTown: 0
+  upgradesDefense: 1
