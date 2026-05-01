@@ -5,17 +5,19 @@ using TMPro;
 public class HighscoreDisplay : MonoBehaviour
 {
     public GameObject highscorePanel;
+    
+
+    private bool isOpen = false;
     public TextMeshProUGUI highscoreText;
     public int maxScores = 10;
 
-    private bool isOpen = false;
+    
 
     private void Update()
     {
         if (isOpen && Input.GetKeyDown(KeyCode.Escape))
             ToggleHighscores();
     }
-
     public void ToggleHighscores()
     {
         isOpen = !isOpen;
@@ -23,9 +25,9 @@ public class HighscoreDisplay : MonoBehaviour
         if (isOpen) RefreshDisplay();
     }
 
-    private void RefreshDisplay()
+    public void RefreshDisplay()
     {
-        highscoreText.text = "--- Top 10 Highscores ---\n\n";
+        highscoreText.text = "---Top 10 Highscores---\n\n";
 
         bool anyScores = false;
         for (int i = 0; i < maxScores; i++)
@@ -49,4 +51,5 @@ public class HighscoreDisplay : MonoBehaviour
         float remainder = time % GameTime.timeInterval;
         return "Day Block " + timeBlock + " | " + remainder.ToString("F1") + "s";
     }
+
 }

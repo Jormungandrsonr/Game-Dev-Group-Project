@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class ExitGame : MonoBehaviour
@@ -20,6 +21,8 @@ public class ExitGame : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Quitting game...");
-        Application.Quit();
+        if(Application.isEditor)
+        {EditorApplication.ExitPlaymode();}
+        else{Application.Quit();}
     }
 }

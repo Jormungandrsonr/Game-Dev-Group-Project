@@ -4204,7 +4204,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 686295590}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ExitGame, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -4450,9 +4450,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7670986549295579502, guid: 329c37b75ac3203e697688b0b29e9bdc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 686295586}
-    - targetCorrespondingSourceObject: {fileID: 7670986549295579502, guid: 329c37b75ac3203e697688b0b29e9bdc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 686295590}
   m_SourcePrefab: {fileID: 100100000, guid: 329c37b75ac3203e697688b0b29e9bdc, type: 3}
 --- !u!114 &686295584 stripped
 MonoBehaviour:
@@ -4483,21 +4480,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highscorePanel: {fileID: 169216767}
-  highscoreText: {fileID: 0}
+  highscoreText: {fileID: 1498914385}
   maxScores: 10
---- !u!114 &686295590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686295585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1cba4201eafe8d4d86b19ea2f9d8da7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exitPanel: {fileID: 0}
 --- !u!1 &769372699
 GameObject:
   m_ObjectHideFlags: 0
@@ -5002,7 +4986,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'High Scores
+  m_text: 'High Scores (Esc to Close)
 
 '
   m_isRightToLeft: 0
@@ -5034,8 +5018,8 @@ MonoBehaviour:
   m_fontSize: 18
   m_fontSizeBase: 18
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 15
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -5303,8 +5287,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
