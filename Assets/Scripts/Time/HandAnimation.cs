@@ -21,7 +21,7 @@ public class HandAnimation : MonoBehaviour
         //rect.Rotate(new Vector3(0,0,-22.5f * tempTimeBlock));
         rect.SetLocalPositionAndRotation(rect.transform.localPosition, Quaternion.Euler(0,0, -22.5f * tempTimeBlock));
         workingTimeBlock = DayTime.GetCurrentTimeBlock() - tempTimeBlock;
-        Debug.Log("Temp: " + tempTimeBlock + " Working: " + workingTimeBlock);
+        //Debug.Log("Temp: " + tempTimeBlock + " Working: " + workingTimeBlock);
         if(workingTimeBlock >= intervals)
         {
             workingTimeBlock = 0;

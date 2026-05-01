@@ -30,7 +30,7 @@ public class GameTime : MonoBehaviour
         tempTimeBlock = DayTime.GetCurrentTimeBlock();
 
         //Win Con
-        if (TownManager.instance != null && TownManager.instance.defenseValue >= 5000)
+        if ((TownManager.instance != null && TownManager.instance.defenseValue >= 5000) || dayEnded)
             ForceFinishDay();
 
         if (tempTimeBlock >= endTime)
