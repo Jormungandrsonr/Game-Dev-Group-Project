@@ -4437,7 +4437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2197043956101866834, guid: 329c37b75ac3203e697688b0b29e9bdc, type: 3}
       propertyPath: nextScene
-      value: Plot
+      value: Difficulty
       objectReference: {fileID: 0}
     - target: {fileID: 7670986549295579502, guid: 329c37b75ac3203e697688b0b29e9bdc, type: 3}
       propertyPath: m_Name

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GuardUpgrade
   m_EditorClassIdentifier: 
   costItem: 6
-  costAmount: 1
+  costAmount: 5
   costItem2: 0
   costAmount2: 0
   rewardItem: 0

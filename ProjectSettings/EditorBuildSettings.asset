@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Plot.unity
     guid: 0956a48b551b27d439a36adc49b968e5
   - enabled: 1
+    path: Assets/Scenes/Difficulty.unity
+    guid: 773072762514b495c946c975c32095b2
+  - enabled: 1
     path: Assets/Scenes/Ending.unity
     guid: 1879f771cc008044590b24e02d3bf16c
   m_configObjects:

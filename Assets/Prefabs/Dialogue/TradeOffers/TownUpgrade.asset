@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: TownUpgrade
   m_EditorClassIdentifier: 
   costItem: 1
-  costAmount: 1
+  costAmount: 10
   costItem2: 2
-  costAmount2: 1
+  costAmount2: 10
   rewardItem: 0
   rewardAmount: 0
   successBranch: {fileID: 11400000, guid: a5ae5fc33cf90da4a88508fd2d68334c, type: 2}

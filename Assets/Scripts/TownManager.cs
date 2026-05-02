@@ -23,7 +23,8 @@ public class TownManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
 
         if (PlayerPrefs.HasKey("TownLevel"))
-            townLevel = PlayerPrefs.GetInt("TownLevel", 1);
+            townLevel = 1;//PlayerPrefs.GetInt("TownLevel", 1);
+            //only loadd the town on load game. not every time
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: CityUpgrade
   m_EditorClassIdentifier: 
   costItem: 1
-  costAmount: 10
+  costAmount: 20
   costItem2: 2
-  costAmount2: 10
+  costAmount2: 20
   rewardItem: 0
   rewardAmount: 0
   successBranch: {fileID: 11400000, guid: bc6ad7066962cab4996c7e42d715d5ef, type: 2}
@@ -36,3 +36,4 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   upgradesTown: 1
+  upgradesDefense: 0

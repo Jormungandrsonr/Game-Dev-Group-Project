@@ -78,11 +78,17 @@ public class GameTime : MonoBehaviour
     public void ForceFinishDay()
     {
         DayTime.SetCurrentTimeBlock(endTime);
-        dayEnded = true;
-        if (GameData.instance != null)
-            GameData.instance.SubmitHighscore();
+        if(DayTime.GetFinalDay() <= DayTime.GetCurrentDay())
+        {
+            if (GameData.instance != null)
+                GameData.instance.SubmitHighscore();
 
-        SceneManager.LoadSceneAsync("Ending");
+            SceneManager.LoadSceneAsync("Ending");
+        }
+        else
+        {
+            DayTime.SetCurrentDay(DayTime.GetCurrentDay()+ 1);
+        }
 
     }
     public void RestartDay()
@@ -90,5 +96,11 @@ public class GameTime : MonoBehaviour
         DayTime.SetCurrentTimeBlock(0);
         DayTime.SetCurrentTime(0);
         dayEnded = false;
+    }
+
+    //3 is easy, 2 is med, 1 is hard
+    public void SetDifficulty(int difficulty)
+    {
+        DayTime.SetFinalDay(difficulty * 2);
     }
 }

@@ -2047,7 +2047,7 @@ PrefabInstance:
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[0].speakerImage
       value: 
-      objectReference: {fileID: -7420315610718431094, guid: 0d92e73e74cb02d4d8a676351c6fb884, type: 3}
+      objectReference: {fileID: -6866566337234773456, guid: 9205bcbbb2caa5d4880eee7274507ebd, type: 3}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[1].dialogueText
       value: Oh Hey Fin, heard you needed some cash. well if you catch some fish
@@ -53982,7 +53982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[0].choiceText
-      value: Upgrade Guards
+      value: Upgrade Guards (5 Gold)
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[0].tradeOffer
@@ -76066,6 +76066,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[2].dialogueLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: dialogueLines.Array.data[1].choices.Array.data[0].branchTree
       value: 
       objectReference: {fileID: 0}
@@ -76130,6 +76134,14 @@ PrefabInstance:
       value: Wally
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[2].dialogueLines.Array.data[0].speakerName
+      value: Wally
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[2].dialogueLines.Array.data[1].speakerName
+      value: Wally
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: checkpoints.Array.data[0].dialogueLines.Array.data[0].dialogueText
       value: Sup dude, Mayor told me we need these walls upgraded.
       objectReference: {fileID: 0}
@@ -76168,19 +76180,47 @@ PrefabInstance:
         to mine in the south cave
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[2].dialogueLines.Array.data[0].dialogueText
+      value: Yo you got the resources?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[2].dialogueLines.Array.data[0].speakerImage
+      value: 
+      objectReference: {fileID: 129065847108892043, guid: dd48752a03c15a545b8409bc7f5b89c0, type: 3}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[2].dialogueLines.Array.data[1].speakerImage
+      value: 
+      objectReference: {fileID: 129065847108892043, guid: dd48752a03c15a545b8409bc7f5b89c0, type: 3}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[2].dialogueLines.Array.data[1].choices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[0].choiceText
-      value: Upgrade Town
+      value: Upgrade Town (20 Wood/Stone)
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[0].tradeOffer
       value: 
-      objectReference: {fileID: 11400000, guid: 95c757620037120458aa919920ecdfac, type: 2}
+      objectReference: {fileID: 11400000, guid: 1389625d669cba648bcef08ac15ad322, type: 2}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
       propertyPath: checkpoints.Array.data[1].dialogueLines.Array.data[1].choices.Array.data[1].choiceText
+      value: Leave
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[2].dialogueLines.Array.data[1].choices.Array.data[0].choiceText
+      value: Upgrade Town (20 Wood/Stone)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[2].dialogueLines.Array.data[1].choices.Array.data[0].tradeOffer
+      value: 
+      objectReference: {fileID: 11400000, guid: 1389625d669cba648bcef08ac15ad322, type: 2}
+    - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
+      propertyPath: checkpoints.Array.data[2].dialogueLines.Array.data[1].choices.Array.data[1].choiceText
       value: Leave
       objectReference: {fileID: 0}
     - target: {fileID: 7243566836253104375, guid: 8c2445b39cd1c674ca442cefc1802a6a, type: 3}
